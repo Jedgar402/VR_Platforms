@@ -6,6 +6,7 @@ public class GazeInteractionControl : MonoBehaviour
 {
     public float maxGazeDistance = 10f;
     private RaycastHit hit;
+    private GazeInteractiveObject lastGazeObject; // Track the last object gazed upon
 
     void Update()
     {
@@ -17,8 +18,25 @@ public class GazeInteractionControl : MonoBehaviour
             if (gazeObject != null)
             {
                 // Trigger interaction
-                gazeObject.OnGazeEnter();
+                if (gazeObject != lastGazeObject)
+                {
+                    // If it's a new object, exit the previous one and enter the new one
+                    if (lastGazeObject != null)
+                    {
+                        lastGazeObject.OnGazeExit();
+                    }
+                    gazeObject.OnGazeEnter();
+                    lastGazeObject = gazeObject;
+                }
+                return; // Exit Update() to prevent OnGazeExit from being called
             }
+        }
+
+        // If no object is being gazed upon, exit the last one if exists
+        if (lastGazeObject != null)
+        {
+            lastGazeObject.OnGazeExit();
+            lastGazeObject = null;
         }
     }
 }
