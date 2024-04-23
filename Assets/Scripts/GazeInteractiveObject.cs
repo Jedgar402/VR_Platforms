@@ -10,28 +10,23 @@ public class GazeInteractiveObject : MonoBehaviour
 
     public string gazedString;
 
-    public Color highlightColor = Color.yellow;
-    private Color originalColor;
-    private Renderer objectRenderer;
-
+    // Start is called before the first frame update
     void Start()
     {
-        objectRenderer = GetComponent<Renderer>();
-        // Store the original color
-        originalColor = objectRenderer.material.color;
-    }
 
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
     public void OnGazeEnter()
     {
         gazedText.text = gazedString;
-        // Highlight the object when player's gaze enters
-        objectRenderer.material.SetColor("_Color", highlightColor);
     }
 
     public void OnGazeExit()
     {
         gazedText.text = "";
-        // Reset object colour when player's gaze exits
-        objectRenderer.material.SetColor("_Color", originalColor);
     }
 }

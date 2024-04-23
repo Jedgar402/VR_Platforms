@@ -5,9 +5,11 @@ using UnityEngine;
 public class GazeInteractionControl : MonoBehaviour
 {
     public float maxGazeDistance = 10f;
-    private RaycastHit hit;
-    private GazeInteractiveObject lastGazeObject; // Track the last object gazed upon
+    private RaycastHit hit;    
+    // Track the last object gazed upon
+    private GazeInteractiveObject lastGazeObject; 
 
+    // Update is called once per frame
     void Update()
     {
         // Cast a ray from the center of the camera's view
@@ -28,7 +30,8 @@ public class GazeInteractionControl : MonoBehaviour
                     gazeObject.OnGazeEnter();
                     lastGazeObject = gazeObject;
                 }
-                return; // Exit Update() to prevent OnGazeExit from being called
+                // Exit Update() to prevent OnGazeExit being called
+                return; 
             }
         }
 

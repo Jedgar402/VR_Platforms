@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour
 {
-    public TextMeshPro scoreText;
-    private int score = 0;
+    public Text coinsText;
+    private int coins = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -17,9 +18,9 @@ public class ScoreController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Ball"))
+        if(other.gameObject.CompareTag("Coin"))
         {
-            score++;
+            coins++;
 
             UpdateText();
 
@@ -29,6 +30,6 @@ public class ScoreController : MonoBehaviour
 
     private void UpdateText()
     {
-        scoreText.text = "Score: " + score;
+        coinsText.text = "Score: " + coins;
     }
 }

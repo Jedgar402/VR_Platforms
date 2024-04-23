@@ -48,7 +48,7 @@ public class LocomotionGliding : MonoBehaviour
         }
 
         //Side input from the players thumbstick
-        float sideways = Input.GetAxis("XRI_Right_Primary2DAxis_Horizontal");
+        float sideways = Input.GetAxis("XRI_Left_Primary2DAxis_Horizontal");
         //If there is an input
         if(sideways != 0f) 
         { 
