@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GazeInteractionControl : MonoBehaviour
 {
+    //Distance for ray
     public float maxGazeDistance = 10f;
+    //Raycast ref
     private RaycastHit hit;    
     // Track the last object gazed upon
     private GazeInteractiveObject lastGazeObject; 
@@ -38,6 +40,7 @@ public class GazeInteractionControl : MonoBehaviour
         // If no object is being gazed upon, exit the last one if exists
         if (lastGazeObject != null)
         {
+            //Call exit gaze method
             lastGazeObject.OnGazeExit();
             lastGazeObject = null;
         }

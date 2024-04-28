@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour
 {
-    // Ref to the pause menu
+    //Ref to the pause menu
     public GameObject pauseMenuUI; 
-    // Ref to the pauseMenu
+    //Ref to the hud
     public GameObject HUD;
 
     private bool isPaused = false;
@@ -30,19 +30,19 @@ public class PauseController : MonoBehaviour
 
     public void TogglePauseMenu()
     {
-        // Toggle the pause state
+        //Toggle the pause state
         isPaused = !isPaused; 
 
         if (isPaused)
         {
             HUD.SetActive(false);
-            // Show the pause menu
+            //Show the pause menu
             pauseMenuUI.SetActive(true); 
         }
         else
         {
             HUD.SetActive(true);
-            // Hide the pause menu
+            //Hide the pause menu
             pauseMenuUI.SetActive(false); 
         }
     }

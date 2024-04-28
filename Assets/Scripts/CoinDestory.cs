@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CoinDestory : MonoBehaviour
 {
+    //Audio source ref
     public AudioSource audio;
 
     // Start is called before the first frame update
@@ -20,14 +21,17 @@ public class CoinDestory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //if the player enters the coin trigger
         if(other.gameObject.CompareTag("Player"))
         {
+            //Destroy this coin
             Destroy(this.gameObject);
         }
     }
 
     private void OnDestroy()
     {
+        //On destroy play audio
         audio.Play();
     }
 }

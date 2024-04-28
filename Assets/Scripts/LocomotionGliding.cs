@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class LocomotionGliding : MonoBehaviour
 {
-    // Reference to the root transform of the rig.
+    // Reference to the root transform of the rig
     public Transform rigRoot;
-    // Speed of gliding locomotion.
+    // Speed of gliding locomotion
     public float velocity = 2f;
-    // Speed of rotation.
+    // Speed of rotation
     public float rotationSpeed = 50f;
-    // Flag to indicate if the player is currently moving.
+    // Flag to indicate if the player is currently moving
     public bool isMoving;
     //Transform to track direction the player is facing
     public Transform trackingTransform;
 
-    // Start is called before the first frame update.
+    // Start is called before the first frame update
     void Start()
     {
         if (rigRoot == null)
