@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CoinDestory : MonoBehaviour
+public class BasketBallHoops : MonoBehaviour
 {
-    public AudioSource audio;
+
+    public ScoreController currentScore;
+
+    public GameObject ball;
+
+    public Transform spawn;
 
     // Start is called before the first frame update
     void Start()
@@ -15,19 +20,18 @@ public class CoinDestory : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Ball"))
         {
-            Destroy(this.gameObject);
-        }
-    }
+            currentScore.coins++;
 
-    private void OnDestroy()
-    {
-        audio.Play();
+            Destroy(other, 1.5f);
+
+            Instantiate(ball, spawn);
+        }
     }
 }

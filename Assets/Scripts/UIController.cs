@@ -31,7 +31,7 @@ public class UIController : MonoBehaviour
         }
 
         // Set initial volume slider value
-        volumeSlider.value = audio.volume;
+        //volumeSlider.value = audio.volume;
     }
 
     private void Update()

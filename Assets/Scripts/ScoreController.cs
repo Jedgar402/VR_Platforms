@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
     public Text coinsText;
-    private int coins = 0;
+    public int coins = 0;
 
     // Start is called before the first frame update
     void Start()

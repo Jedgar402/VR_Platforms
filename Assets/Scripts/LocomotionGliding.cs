@@ -18,7 +18,7 @@ public class LocomotionGliding : MonoBehaviour
     // Start is called before the first frame update.
     void Start()
     {
-        if(rigRoot == null)
+        if (rigRoot == null)
         {
             rigRoot = this.transform;
         }
@@ -30,13 +30,13 @@ public class LocomotionGliding : MonoBehaviour
         // Forward input from player thumbstick
         float forward = Input.GetAxis("XRI_Right_Primary2DAxis_Vertical");
         //If there is an input
-        if(forward != 0f)
+        if (forward != 0f)
         {
             //This input is hte direction magnitude 
             Vector3 moveDirection = Vector3.forward;
             //If the trackingTransform exists
-            if(trackingTransform != null ) 
-            { 
+            if (trackingTransform != null)
+            {
                 //The trackinTransform forward vector is the moveDirection
                 moveDirection = trackingTransform.forward;
                 moveDirection.y = 0f;
@@ -50,8 +50,8 @@ public class LocomotionGliding : MonoBehaviour
         //Side input from the players thumbstick
         float sideways = Input.GetAxis("XRI_Left_Primary2DAxis_Horizontal");
         //If there is an input
-        if(sideways != 0f) 
-        { 
+        if (sideways != 0f)
+        {
             //Rotation is equal to the side input times the rotation speed every second
             float rotation = sideways * rotationSpeed * Time.deltaTime;
             //Rotate the rigRoot 
